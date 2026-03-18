@@ -3,6 +3,7 @@ import type { Express,Request,Response } from 'express';
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv'
+import { globalErrorHandler } from './middlewares/error.middleware';
 dotenv.config()
 
 const app: Express = express();
@@ -20,6 +21,7 @@ app.use(cors({
 app.use(express.urlencoded({
     extended: true
 }));
+app.use(globalErrorHandler);
 
 
 
