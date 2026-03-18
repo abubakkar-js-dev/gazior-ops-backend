@@ -1,0 +1,1 @@
+export const DB_Name = 'gazior-obs-db'
